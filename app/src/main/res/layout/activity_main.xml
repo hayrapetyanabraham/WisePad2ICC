@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonStartConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:minWidth="250dp"
+        android:onClick="onStartConnection"
+        android:text="@string/start_connection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPowerOnIcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:minWidth="140dp"
+        android:onClick="onPowerOnIcc"
+        android:text="@string/power_on_icc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonClearLog"
+        app:layout_constraintStart_toStartOf="@+id/buttonClearLog" />
+
+    <Button
+        android:id="@+id/buttonPowerOffIcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:minWidth="140dp"
+        android:onClick="onPowerOffIcc"
+        android:text="@string/power_off_icc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/buttonSendAPDU"
+        app:layout_constraintStart_toStartOf="@+id/buttonSendAPDU" />
+
+    <Button
+        android:id="@+id/buttonClearLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:minWidth="140dp"
+        android:onClick="onClearLog"
+        android:text="@string/clear_log"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPowerOnIcc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSendAPDU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:minWidth="140dp"
+        android:onClick="onSendAPDU"
+        android:text="@string/send_apdu"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPowerOffIcc"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/statusEditText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top|start"
+        android:hint="@string/status"
+        android:minWidth="140dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonClearLog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCardData"
+        app:layout_constraintVertical_weight="0.7" />
+
+    <TextView
+        android:id="@+id/textViewCardData"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="top|start"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/statusEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartConnection"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_weight="0.3" />
+</android.support.constraint.ConstraintLayout>

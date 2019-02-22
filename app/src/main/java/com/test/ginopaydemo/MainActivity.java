@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
     private static String[] afls = null;
     private static int total = 0;
 
-    protected static String ksn = "";
+    protected String ksn = "";
 
     protected static boolean isApduEncrypted = true;
 
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity {
 
             dismissDialog();
             if (isSuccess) {
-                MainActivity.ksn = ksn;
+                MainActivity.this.ksn = ksn;
 
                 setStatus(getString(R.string.power_on_icc_success));
                 setStatus(getString(R.string.ksn) + ksn);
@@ -717,7 +717,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        if (isVersionShown == false) {
+        if (!isVersionShown) {
             isVersionShown = true;
             statusEditText.setText("BBDevice API : " + BBDeviceController.getApiVersion());
         }
@@ -725,7 +725,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onStartConnection(View view) {
-
         promptForConnection();
 
     }
